@@ -7,7 +7,7 @@ class ActiveSupport::TestCase
   fixtures :all
 
   def is_logged_in?
-  	!session[:user_id].nil?
+  	!session[:user_id].nil? || !cookies[:user_id].nil?
   end
 
   def log_in_as(user, options = {})
